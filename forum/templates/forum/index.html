@@ -1,168 +1,145 @@
-<!DOCTYPE html>
-<html lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Threads Listing | Forum</title>
+{% extends 'user_profile/base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-lg-offset-0">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="./bs/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+            <div class="logo">
+                <div>
+                    <a href="./">Forum</a>
+                    <span class="tagline">...cool community forum</span>
+                </div>
+            </div>
+            <div class="menu">
+                <a href="./index.html" class="m-item">Home</a> |
+                <a href="./profile.html" class="m-item">Profile</a> |
+                <a href="./login.html" class="m-item">Logout</a>
+            </div>
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
+            <div class="pageTitle">Thread Listing </div>
 
-        <div class="container">
+
             <div class="row">
-                <div class="col-lg-12 col-lg-offset-0">
-                    
-                    <div class="logo">
-                        <div>
-                            <a href="./">Forum</a> 
-                            <span class="tagline">...cool community forum</span> 
+                <div class="col-lg-3">
+                    <a href="#newModal" data-toggle="modal" class="btn btn-primary" title="Add Thread">
+                        <i class="glyphicon glyphicon-plus-sign"></i> Add Thread
+                    </a>
+                </div>
+            </div>
+
+            <div class="row pad">
+                <div class="col-lg-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-lg-4">Name</div>
+                                <div class="col-lg-4">Description</div>
+                                <div class="col-lg-4">Last Post</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="menu">
-                        <a href="./index.html" class="m-item">Home</a> | 
-                        <a href="./profile.html" class="m-item">Profile</a> | 
-                        <a href="./login.html" class="m-item">Logout</a>
-                    </div>
-
-                    <div class="pageTitle">Thread Listing </div>
-
-
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <a href="#newModal" data-toggle="modal" class="btn btn-primary" title="Add Thread">
-                                <i class="glyphicon glyphicon-plus-sign"></i> Add Thread
-                            </a>
-                        </div>
-                    </div>
-
-<div class="row pad">
-                        <div class="col-lg-12">
-                            <div class="panel panel-primary">
-                                <div class="panel-heading">
-                                    <div class="row">
-                                        <div class="col-lg-4">Name</div>
-                                        <div class="col-lg-4">Description</div>
-                                        <div class="col-lg-4">Last Post</div>
-                                    </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <h3 class="panel-title">
+                                        <a href="./thread.html" style="font-size: 18px;" class="blue">
+                                            General Thread
+                                        </a>
+                                    </h3>
                                 </div>
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <h3 class="panel-title">
-                                                <a href="./thread.html" style="font-size: 18px;" class="blue">
-                                                    General Thread
-                                                </a>
-                                            </h3>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <p>
-                                                <em>
-                                                    This thread is for sharing general information
-                                                </em>
-                                            </p>
-                                        </div>
-
-                                        <div class="col-lg-4">
-                                            <p>
-                                                <i class="glyphicon glyphicon-calendar"></i> 
-                                                26 June, 2017 &nbsp;
-                                                <a href="./thread.html#_reply">
-                                                    <i class="glyphicon glyphicon-comment"></i> Reply
-                                                </a>
-                                            </p>
-                                        </div>
-                                    </div>
+                                <div class="col-lg-4">
+                                    <p>
+                                        <em>
+                                            This thread is for sharing general information
+                                        </em>
+                                    </p>
                                 </div>
 
-                                <div class="panel-body">
-                                    <div class="row">
-                                        <div class="col-lg-4">
-                                            <h3 class="panel-title">
-                                                <a href="./thread.html" style="font-size: 18px;" class="blue">
-                                                    Games Thread
-                                                </a>
-                                            </h3>
-                                        </div>
-                                        <div class="col-lg-4">
-                                            <p>
-                                                <em>
-                                                    This thread is for game related discussions
-                                                </em>
-                                            </p>
-                                        </div>
+                                <div class="col-lg-4">
+                                    <p>
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                        26 June, 2017 &nbsp;
+                                        <a href="./thread.html#_reply">
+                                            <i class="glyphicon glyphicon-comment"></i> Reply
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
-                                        <div class="col-lg-4">
-                                            <p>
-                                                <i class="glyphicon glyphicon-calendar"></i> 
-                                                26 June, 2017 &nbsp;
-                                                <a href="./thread.html#_reply">
-                                                    <i class="glyphicon glyphicon-comment"></i> Reply
-                                                </a>
-                                            </p>
-                                        </div>
-                                    </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <h3 class="panel-title">
+                                        <a href="./thread.html" style="font-size: 18px;" class="blue">
+                                            Games Thread
+                                        </a>
+                                    </h3>
+                                </div>
+                                <div class="col-lg-4">
+                                    <p>
+                                        <em>
+                                            This thread is for game related discussions
+                                        </em>
+                                    </p>
+                                </div>
+
+                                <div class="col-lg-4">
+                                    <p>
+                                        <i class="glyphicon glyphicon-calendar"></i>
+                                        26 June, 2017 &nbsp;
+                                        <a href="./thread.html#_reply">
+                                            <i class="glyphicon glyphicon-comment"></i> Reply
+                                        </a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                            
-                    <footer>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="center">
-                                    Copyright &copy; 2018 Forum. All rights reserved.
-                                </div>
-                            </div>
-                        </div>
-                    </footer>
+                </div>
+            </div>
 
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="center">
+                            Copyright &copy; 2018 Forum. All rights reserved.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="newModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Add Thread</h4>
+            </div>
+            <div class="modal-body">
+                <form action="" method="POST" role="form">
+
+                    <div class="form-group">
+                        <label for="name">Thread Name</label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter thread name"
+                            required="required">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" name="description" id="description" class="form-control"
+                            placeholder="Enter description" required="required">
+                    </div>
+
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="newModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title">Add Thread</h4>
-                </div>
-                <div class="modal-body">
-                    <form action="" method="POST" role="form">
-                    
-                        <div class="form-group">
-                            <label for="name">Thread Name</label>
-                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter thread name" required="required">
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <input type="text" name="description" id="description" class="form-control" placeholder="Enter description" required="required">
-                        </div>
-                        
-                    
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-        <!-- jQuery -->
-        <script src="./bs/js/jquery.min.js"></script>
-        <!-- Bootstrap JavaScript -->
-        <script src="./bs/js/bootstrap.min.js"></script>
-    </body>
-</html>
+</div>
+{% endblock %}

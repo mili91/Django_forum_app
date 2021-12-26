@@ -1,95 +1,73 @@
-<!DOCTYPE html>
-<html lang="">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Register | Forum</title>
+{% extends 'user_profile/base.html' %}
+{% block body %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3" id="loginBlock">
 
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="./bs/css/bootstrap.min.css" />
-        <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+            <div class="logo">
+                <div>
+                    <a href="./">Forum</a>
+                </div>
+            </div>
 
-        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
+            <div class="pageTitle">Register</div>
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-lg-offset-3" id="loginBlock">
-                    
-                    <div class="logo">
-                        <div>
-                            <a href="./">Forum</a> 
+            <form action="" method="POST" role="form">
+                <div class="row pad">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="name">Username</label>
+                            <input type="text" name="name" id="name" class="form-control" placeholder="Enter name"
+                                required="required" autofocus>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" class="form-control"
+                                placeholder="Enter password" required="required">
                         </div>
                     </div>
-
-                    <div class="pageTitle">Register</div>
-
-                    <form action="" method="POST" role="form">
-                        <div class="row pad">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="name">Username</label>
-                                    <input type="text" name="name" id="name" class="form-control" placeholder="Enter name" required="required" autofocus>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="password">Password</label>
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" required="required">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label for="email">Email Address</label>
-                                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter email" required="required">
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="password">Confirm Password</label>
-                                    <input type="password" name="password" id="password" class="form-control" placeholder="Enter password" required="required">
-                                </div>
-                            </div>
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Enter email"
+                                required="required">
                         </div>
 
-                        <div class="row pad">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="glyphicon glyphicon-plus-sign"></i> Register
-                                    </button> 
-                                    <a href="./login.html" class="btn btn-link pull-right">
-                                        Go to Login <i class="glyphicon glyphicon-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <label for="password">Confirm Password</label>
+                            <input type="password" name="password" id="password" class="form-control"
+                                placeholder="Enter password" required="required">
                         </div>
-                    </form>
+                    </div>
+                </div>
 
-                            
-                    <footer>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="center">
-                                    Copyright &copy; 2018 Forum. All rights reserved.
-                                </div>
-                            </div>
+                <div class="row pad">
+                    <div class="col-lg-6">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="glyphicon glyphicon-plus-sign"></i> Register
+                            </button>
+                            <a href="./login.html" class="btn btn-link pull-right">
+                                Go to Login <i class="glyphicon glyphicon-arrow-right"></i>
+                            </a>
                         </div>
-                    </footer>
+                    </div>
+                </div>
+            </form>
 
-            </div>
+
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="center">
+                            Copyright &copy; 2018 Forum. All rights reserved.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
         </div>
     </div>
-
-
-        <!-- jQuery -->
-        <script src="./bs/js/jquery.min.js"></script>
-        <!-- Bootstrap JavaScript -->
-        <script src="./bs/js/bootstrap.min.js"></script>
-    </body>
-</html>
+</div>
+{% endblock %}
