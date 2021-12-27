@@ -1,7 +1,7 @@
-from typing import Any
 from django import forms
 from django.contrib.auth.models import User 
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from typing import Any
 
 
 class ExtendedUserCreationForm (UserCreationForm):
@@ -25,3 +25,9 @@ class ExtendedUserCreationForm (UserCreationForm):
             user.save()
         
         return user
+
+class ExtendedAuthenticationForm(AuthenticationForm):
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        super().__init__(*args, **kwargs)
+        self.fields['username'].widget.attrs.update({'class' : 'form-control', 'placeholder' : 'Enter a username', 'tabindex' : '1'})
+        self.fields['password'].widget.attrs.update({'class' : 'form-control', 'placeholder' : 'Enter a password', 'tabindex' : '2'})
