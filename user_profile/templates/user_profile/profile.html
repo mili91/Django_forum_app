@@ -27,16 +27,16 @@
                         </div>
                         <ul class="list-group">
                             <li class="list-group-item">
-                                Email: <strong class="pull-right">alexQnn@gmail.com</strong>
+                                Email: <strong class="pull-right">{{ user.email }}</strong>
                             </li>
                             <li class="list-group-item">
-                                Username: <strong class="pull-right">alexQnn</strong>
+                                Username: <strong class="pull-right">{{ user.username }}</strong>
                             </li>
                             <li class="list-group-item">
                                 Num of Posts: <strong class="pull-right">23</strong>
                             </li>
                             <li class="list-group-item">
-                                Join Date: <strong class="pull-right">January 1, 2018</strong>
+                                Join Date: <strong class="pull-right">{{ user.date_joined|date:"F j, Y" }}</strong>
                             </li>
                         </ul>
                     </div>
