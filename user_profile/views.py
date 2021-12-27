@@ -1,5 +1,6 @@
-from django.contrib.auth import authenticate, login
 from django.shortcuts import redirect, render
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from .forms import ExtendedUserCreationForm
 
 
@@ -23,6 +24,7 @@ def register(request):
 
     context = {'form' : form}
     return render(request, 'user_profile/register.html', context)
-
+    
+@login_required
 def profile(request):
     return render(request, 'user_profile/profile.html')
