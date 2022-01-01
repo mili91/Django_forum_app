@@ -97,10 +97,9 @@
                                     </div> -->
                         <div class="panel-body pad" id="_reply">
                             <form action="" method="POST" role="form" id="theForm">
-
+                                {% csrf_token %}
                                 <div class="form-group">
-                                    <textarea name="reply" id="reply" class="form-control" rows="5" required="required"
-                                        placeholder="Post Reply"></textarea>
+                                    {{ form.message }}
                                 </div>
 
                                 <button type="submit" class="btn btn-primary">

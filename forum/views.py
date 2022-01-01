@@ -1,6 +1,6 @@
 from django.shortcuts import redirect, render
 from django.views.decorators.http import require_POST
-from .forms import ThreadForm
+from .forms import ThreadForm, ReplyForm
 from .models import Thread
 
 
@@ -14,8 +14,18 @@ def index(request):
 
 def thread(request, thread_id):
     thread = Thread.objects.get(pk=thread_id) 
+    if request.method == 'POST':
+        form = ReplyForm(request.POST)
+        reply = form.save(commit=False)
+        reply.user = request.user
+        reply.thread = thread
+        reply.save()
+        
+        return redirect('thread', thread_id)
+    else:
+        form = ReplyForm()
 
-    context = {'thread' : thread}
+    context = {'thread' : thread, 'form' : form}
     return render(request, 'forum/thread.html', context)
     
 @require_POST
