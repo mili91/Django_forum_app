@@ -11,7 +11,7 @@
                 </div>
             </div>
             <div class="menu">
-                <a href="./index.html" class="m-item">Home</a> |
+                <a href="{% url 'new_thread' %}" class="m-item">Home</a> |
                 <a href="./profile.html" class="m-item">Profile</a> |
                 <a href="./login.html" class="m-item">Logout</a>
             </div>
@@ -119,17 +119,15 @@
                 <h4 class="modal-title">Add Thread</h4>
             </div>
             <div class="modal-body">
-                <form action="" method="POST" role="form">
-
+                <form action="{% url 'new_thread' %}" method="POST" role="form">
+                    {% csrf_token %}
                     <div class="form-group">
                         <label for="name">Thread Name</label>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter thread name"
-                            required="required">
+                        {{ form.title }}
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input type="text" name="description" id="description" class="form-control"
-                            placeholder="Enter description" required="required">
+                        {{ form.description }}
                     </div>
 
 
