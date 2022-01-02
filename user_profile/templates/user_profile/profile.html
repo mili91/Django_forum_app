@@ -33,7 +33,7 @@
                                 Username: <strong class="pull-right">{{ user.username }}</strong>
                             </li>
                             <li class="list-group-item">
-                                Num of Posts: <strong class="pull-right">23</strong>
+                                Num of Posts: <strong class="pull-right">{{ user.reply_set.count }}</strong>
                             </li>
                             <li class="list-group-item">
                                 Join Date: <strong class="pull-right">{{ user.date_joined|date:"F j, Y" }}</strong>
