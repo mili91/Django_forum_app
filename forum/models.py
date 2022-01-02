@@ -8,6 +8,12 @@ class Thread(models.Model):
     def __str__(self) -> str:
         return self.title
     
+    def get_latest_date(self):
+        if self.reply_set.count() > 0:
+            return self.reply_set.latest('date_created').date_created 
+        else:
+            return self.date_created
+
 class Reply(models.Model):
     thread = models.ForeignKey(Thread, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
