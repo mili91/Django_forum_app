@@ -18,7 +18,7 @@
 
             <div class="pageTitle">Thread Listing </div>
 
-
+            {% if user.is_authenticated %}
             <div class="row">
                 <div class="col-lg-3">
                     <a href="#newModal" data-toggle="modal" class="btn btn-primary" title="Add Thread">
@@ -26,7 +26,8 @@
                     </a>
                 </div>
             </div>
-
+                {% endif %}
+            
             <div class="row pad">
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
@@ -84,6 +85,8 @@
         </div>
     </div>
 </div>
+
+{% if user.is_authenticated %}
 <div class="modal fade" id="newModal">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -91,6 +94,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h4 class="modal-title">Add Thread</h4>
             </div>
+            
             <div class="modal-body">
                 <form action="{% url 'new_thread' %}" method="POST" role="form">
                     {% csrf_token %}
@@ -113,4 +117,5 @@
         </div>
     </div>
 </div>
+{% endif %}
 {% endblock %}
