@@ -6,14 +6,14 @@
 
             <div class="logo">
                 <div>
-                    <a href="./">Forum</a>
+                    <a href="{% url 'index' %}">Forum</a>
                     <span class="tagline">...cool community forum</span>
                 </div>
             </div>
             <div class="menu">
-                <a href="./index.html" class="m-item">Home</a> |
-                <a href="./profile.html" class="m-item">Profile</a> |
-                <a href="./login.html" class="m-item">Logout</a>
+                <a href="{% url 'index' %}" class="m-item">Home</a> |
+                <a href="{% url 'profile' %}" class="m-item">Profile</a> |
+                <a href="{% url 'logout' %}" class="m-item">Logout</a>
             </div>
 
             <!-- display the page title and the number of threads we got from the database -->

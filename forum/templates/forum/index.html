@@ -6,17 +6,17 @@
 
             <div class="logo">
                 <div>
-                    <a href="./">Forum</a>
+                    <a href="{% url 'index' %}">Forum</a>
                     <span class="tagline">...cool community forum</span>
                 </div>
             </div>
             <div class="menu">
-                <a href="{% url 'new_thread' %}" class="m-item">Home</a> |
+                <a href="{% url 'index' %}" class="m-item">Home</a> |
                 {% if user.is_authenticated %}
-                <a href="./profile.html" class="m-item">Profile</a> |
-                <a href="./login.html" class="m-item">Logout</a>
+                <a href="{% url 'profile' %}" class="m-item">Profile</a> |
+                <a href="{% url 'logout' %}" class="m-item">Logout</a>
                 {% else %}
-                <a href="./login.html" class="m-item">Login</a>
+                <a href="{% url 'login' %}" class="m-item">Login</a>
                 {% endif %}
             </div>
 
@@ -64,7 +64,7 @@
                                     <p>
                                         <i class="glyphicon glyphicon-calendar"></i>
                                         {{ thread.get_latest_date }} &nbsp;
-                                        <a href="./thread.html#_reply">
+                                        <a href="{% url 'thread' thread.id %}#_reply">
                                             <i class="glyphicon glyphicon-comment"></i> Reply
                                         </a>
                                     </p>

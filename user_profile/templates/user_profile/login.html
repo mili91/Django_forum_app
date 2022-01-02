@@ -6,7 +6,7 @@
 
             <div class="logo">
                 <div>
-                    <a href="./">Forum</a>
+                    <a href="{% url 'index' %}">Forum</a>
                 </div>
             </div>
 
@@ -32,7 +32,7 @@
                             <button type="submit" class="btn btn-primary">
                                 Login <i class="glyphicon glyphicon-arrow-right"></i>
                             </button>
-                            <a href="./register.html" class="btn btn-link pull-right">
+                            <a href="{% url 'register' %}" class="btn btn-link pull-right">
                                 <i class="glyphicon glyphicon-plus-sign"></i> Go to Register
                             </a>
                         </div>
