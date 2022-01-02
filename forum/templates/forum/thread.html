@@ -73,7 +73,8 @@
                 </div>
             </div>
             {% endfor %}
-
+            
+            {% if user.is_authenticated %}
             <div class="row pad">
                 <div class="col-lg-12 pad">
                     <div class="panel panel-primary">
@@ -95,6 +96,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
 
 
             <footer>
